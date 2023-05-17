@@ -1,0 +1,342 @@
+@font-face {
+    font-family: 'Monda';
+    src: url('./font/Monda-Regular.woff2') format('woff2'), url('./font/Monda-Regular.woff') format('woff');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    background-color: rgba(24, 24, 36, 1);
+    font-family: 'Monda';
+    font-weight: 400;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.typewriter-container {
+    padding-top: 20px;
+    display: inline-block;
+}
+
+.title {
+    margin-bottom: 60px;
+    width: 98%;
+    height: 120px;
+    font-size: 96px;
+    line-height: 120px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    border-right: 5px solid #FFFFFF;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: cursor 0.45s step-end infinite,
+                typing 1.6s steps(4)
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+.app {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.app__top {
+    margin: 0 auto 10px auto;
+    display: flex;
+    width: 550px;
+    height: 70px;
+}
+
+.error-box {
+    margin-bottom: 30px;
+}
+
+.error {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: rgb(200, 12, 12);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.error-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.app__input {
+    padding: 10px 30px;
+    width: 80%;
+    border: none;
+    background: #25273C;
+    border-radius: 30px 0 0 30px;
+    font-size: 30px;
+    line-height: 59px;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.app__btn {
+    width: 20%;
+    height: 70px;
+    border: none;
+    background: rgba(90, 255, 49, 0.6);
+    border-radius: 0px 30px 30px 0px;
+    transition: all 0.2s;
+}
+
+.app__btn__icon {
+    margin-left: -10px;
+    transition: all 0.2s;
+}
+
+.app__btn:hover {
+    background: rgb(50, 143, 27);
+    box-shadow: inset 6px 6px 3px -2px rgba(0, 0, 0, 0.25);
+}
+
+.app__btn:active {
+    background: rgb(30, 84, 16);
+}
+
+.app__btn:hover .app__btn__icon {
+    transform: translateY(6px);
+}
+
+.app__empty {
+    margin: 0 auto;
+    padding: 100px;
+    border: 2px solid #AD02FE;
+}
+
+.app__empty__text {
+    text-align: center;
+    font-size: 24px;
+    line-height: 39px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+}
+
+.app__list {
+    margin: 0 auto;
+    background: #25273C;
+}
+
+#list-container {
+    margin-bottom: 50px;
+}
+
+.app__item {
+    padding: 20px 25px 0 25px;
+}
+
+.app__item::after {
+    content: "";
+    margin: 20px auto 0 auto;
+    display: block;
+    height: 4px;
+    width: 500px;
+    background-color: rgba(72, 64, 64, 0.37);
+}
+
+.app__item__label {
+    display: flex;
+    width: 100%;
+}
+
+.app__item__delete {
+    width: 45px;
+    height: 45px;
+}
+
+.app__item__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app__bottom {
+    margin: 0 auto 60px auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    background: #25273C;
+    border: 2px solid #AD02FE;
+}
+
+.app__bottom__text {
+    font-size: 24px;
+    line-height: 39px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+}
+
+.disabled {
+    color: #ffffff2b;
+    cursor: not-allowed;
+}
+
+/* checkbox */
+
+.app__checkbox {
+    width: 43px;
+}
+
+.app__checkbox__base {
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.app__checkbox__frame {
+    margin-right: 25px;
+    display: block;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    border: 2px solid rgba(191, 86, 255, 0.79);
+    transform: translateY(10px);
+}
+
+.app__item__text {
+    font-size: 36px;
+    line-height: 59px;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.app__checkbox__base:checked + .app__checkbox__frame {
+    background: linear-gradient(111.35deg, #E600FA 10.12%, rgba(82, 97, 234, 0) 82.22%);
+}
+
+.app__checkbox__base:checked + .app__checkbox__frame::after {
+    content: '';
+    display: block;
+    height: 100%;
+    background-image: url(./img/Check.svg);
+    background-position: 8px 12px;
+    background-repeat: no-repeat;
+}
+
+.app__checkbox__base:checked ~ .app__item__text {
+    color: rgba(15, 144, 162, 0.57);
+    text-decoration: line-through;
+}
+
+/* checkbox */
+
+.dark-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+}
+
+.dark-bg-popup {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.popup {
+    margin: 250px auto 0 auto;
+    padding: 30px 10px;
+    width: 700px;
+    border: 2px solid #AD02FE;
+    backdrop-filter: blur(4px);
+    transition: all 0.2s;
+    transform: scale(0);
+}
+
+.dark-bg-clear {
+    background-color: rgba(235, 22, 22, 0.4);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dark-bg-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-clear {
+    background-color: rgba(71, 8, 8, 0.71);
+}
+
+.dark-bg-active .popup {
+    transform: scale(1);
+}
+
+.popup__title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 36px;
+    line-height: 59px;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.popup__buttons {
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    width: fit-content;
+}
+
+.popup__btn {
+    padding: 15px 25px;
+    width: 200px;
+    font-size: 36px;
+    line-height: 59px;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.1s;
+}
+
+.popup__btn-deny {
+    background-color: rgb(62, 39, 122);
+}
+
+.popup__btn-deny:hover {
+    background-color: rgb(44, 28, 80);
+}
+
+.popup__btn-remove {
+    background-color: rgb(235, 22, 22);
+}
+
+.popup__btn-remove:hover {
+    background-color: rgb(132, 21, 21);
+}
