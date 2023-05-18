@@ -201,7 +201,7 @@ body {
     color: #FFFFFF;
 }
 
-.disabled {
+.app__bottom__btn:disabled {
     color: #ffffff2b;
     cursor: not-allowed;
 }
