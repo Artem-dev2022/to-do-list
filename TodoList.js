@@ -2,8 +2,6 @@ import { TodoItem } from './TodoItem.js'
 
 export class TodoList {
     _list = []
-    _listLength = 0
-    _listDoneLength = 0
     _maxId = 0
 
     constructor(container, amountCounter, amountDoneCounter, clearBtn) {
@@ -33,6 +31,8 @@ export class TodoList {
     }
 
     checkEmpty(){
+        this.empty ? [this.empty.remove(), this.clearBtn.classList.remove('disabled'), this.clearBtn.disabled = false] : null
+
         if (!this._list.length) {
             this.empty = document.createElement('div')
             this.empty.classList.add('app__empty')
@@ -44,8 +44,7 @@ export class TodoList {
             this.list.append(this.empty)
 
             this.clearBtn.classList.add('disabled')
-        } else {
-            this.empty ? [this.empty.remove(), this.clearBtn.classList.remove('disabled')] : null
+            this.clearBtn.disabled = true
         }
     }
 
