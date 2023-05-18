@@ -42,3 +42,9 @@ clearBtn.addEventListener('click', () => {
         clearPopup.classList.remove('dark-bg-active')
     })
 })
+
+const popup = document.querySelector('.dark-bg-popup')
+const denyBtn = document.querySelector('.popup__btn-deny')
+denyBtn.addEventListener('click', () => {
+    popup.classList.remove('dark-bg-active')
+})

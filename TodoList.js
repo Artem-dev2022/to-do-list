@@ -68,10 +68,6 @@ export class TodoList {
     delete(value) {
         let id = value
 
-        if (value instanceof TodoItem){
-            id = value.id
-        }
-
         for (let i = 0; i <this._list.length; i++) {
             if (this._list[i].id == id) {
                 this._list.splice(i, 1)
